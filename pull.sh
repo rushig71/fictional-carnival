@@ -5,13 +5,16 @@ else
 fi
 
 git checkout main
-git pull
+git pull origin main
 
 if git log | grep git-subtree-dir | tr -d ' ' | cut -d ":" -f2 | sort | uniq | grep sub-folder > /dev/null; then
     echo "subtree found"
 else
+
+# rm -r sub-folder/
     git subtree add --prefix=sub-folder https://github.com/rushig71/stunning-rotary-phone.git main --squash
 fi
 
 git subtree pull --prefix=sub-folder https://github.com/rushig71/stunning-rotary-phone.git main --squash
+git pull
 git push
