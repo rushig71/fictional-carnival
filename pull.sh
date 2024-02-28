@@ -1,7 +1,7 @@
 if git remote | grep origin > /dev/null; then
-    echo "origin found"
+    git remote set-url origin https://rushig71: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@github.com/rushig71/fictional-carnival.git
 else
-    git remote add origin https://github.com/rushig71/fictional-carnival.git
+    git remote add origin https://rushig71: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@github.com/rushig71/fictional-carnival.git
 fi
 
 git pull origin main
