@@ -19,14 +19,16 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
-- script: |
-    if [! -d "sub-folder"]
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      if [! -d "sub-folder"]
+      then
       git subtree add --prefix=sub-folder https://github.com/rushig71/stunning-rotary-phone.git main --squash
-    fi
-    git subtree pull --prefix=sub-folder https://github.com/rushig71/stunning-rotary-phone.git main --squash
-  displayName: 'add/pull subtree'
-- script: git push
-  displayName: 'subtree push'
+      fi
+      git subtree pull --prefix=sub-folder https://github.com/rushig71/stunning-rotary-phone.git main --squash
+      git push
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
