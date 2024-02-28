@@ -19,8 +19,8 @@ rm -r sub-folder/
 echo "rm complete"
 git add .
 git commit -m "update tenant folder"
-git push origin main
+env GIT_TERMINAL_PROMPT=1 git push origin main
 
 git subtree add --prefix=sub-folder https://github.com/rushig71/stunning-rotary-phone.git main --squash
 git subtree pull --prefix=sub-folder https://github.com/rushig71/stunning-rotary-phone.git main --squash
-git push
+env GIT_TERMINAL_PROMPT=1 git push
