@@ -10,6 +10,8 @@ git checkout main
 # if git log | grep git-subtree-dir | tr -d ' ' | cut -d ":" -f2 | sort | uniq | grep sub-folder > /dev/null; then
 #     echo "subtree found"
 # else
+git config --global user.email "gunjekar.rushi@gmail.com"
+git config --global user.name "rushig71"
 
 rm -r sub-folder/
 git commit -m "update tenant folder"
