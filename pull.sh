@@ -12,6 +12,8 @@ git checkout main
 # else
 
 rm -r sub-folder/
+git commit -m "update tenant folder"
+git push origin main
 git subtree add --prefix=sub-folder https://github.com/rushig71/stunning-rotary-phone.git main --squash
 # fi
 
