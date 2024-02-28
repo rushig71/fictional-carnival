@@ -13,6 +13,7 @@ git checkout main
 # fi
 git config --global user.email "gunjekar.rushi@gmail.com"
 git config --global user.name "rushig71"
+git c
 
 rm -r sub-folder/
 echo "rm complete"
