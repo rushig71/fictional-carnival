@@ -19,10 +19,12 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
-- script: git subtree add --prefix=sub-folder https://github.com/rushig71/stunning-rotary-phone.git main --squash
-  displayName: 'add subtree'
-- script: git subtree pull --prefix=sub-folder https://github.com/rushig71/stunning-rotary-phone.git main --squash
-  displayName: 'subtree pull'
+- script: |
+    if [! -d "sub-folder"]
+      git subtree add --prefix=sub-folder https://github.com/rushig71/stunning-rotary-phone.git main --squash
+    fi
+    git subtree pull --prefix=sub-folder https://github.com/rushig71/stunning-rotary-phone.git main --squash
+  displayName: 'add/pull subtree'
 - script: git push
   displayName: 'subtree push'
 
