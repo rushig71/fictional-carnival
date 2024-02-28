@@ -8,7 +8,7 @@ trigger: none
 resources:
   pipelines:
   - pipeline: previous-pipeline-trigger
-    # source: First-Pipeline-yaml
+    source: PR-Pipeline
     trigger: true
 
 pool:
@@ -17,6 +17,10 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
+- script: git subtree pull --prefix=sub-folder https://github.com/rushig71/stunning-rotary-phone.git main --squash
+  displayName: 'subtree pull'
+- script: git push
+  displayName: 'subtree push'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
