@@ -11,9 +11,10 @@ git checkout main
 #     echo "subtree found"
 # else
 # fi
-git config --global user.email "gunjekar.rushi@gmail.com"
-git config --global user.name "rushig71"
-git config --global github.token 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
+env GIT_TERMINAL_PROMPT=1 git config --global user.email "gunjekar.rushi@gmail.com"
+env GIT_TERMINAL_PROMPT=1 git config --global user.name "rushig71"
+env GIT_TERMINAL_PROMPT=1 git config --global github.token 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
+git config --global credential.helper store
 
 rm -r sub-folder/
 echo "rm complete"
