@@ -4,7 +4,7 @@
 #     git remote add origin https://git@github.com/rushig71/fictional-carnival.git
 # fi
 
-git config --global credential.helper '!f() { sleep 1; echo "username=rushig71 token=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"; }; f'
+env GIT_TERMINAL_PROMPT=1 git config --global credential.helper '!f() { sleep 1; echo "username=rushig71 token=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"; }; f'
 git clone -b main https://github.com/rushig71/fictional-carnival.git
 cd fictional-carnival
 # git pull origin main
@@ -14,7 +14,7 @@ cd fictional-carnival
 #     echo "subtree found"
 # else
 # fi
-git config --global user.email "gunjekar.rushi@gmail.com"
+env GIT_TERMINAL_PROMPT=1 git config --global user.email "gunjekar.rushi@gmail.com"
 # env GIT_TERMINAL_PROMPT=1 git config --global user.name "rushig71"
 # env GIT_TERMINAL_PROMPT=1 git config --global github.token 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
 
@@ -25,5 +25,5 @@ git config --global user.email "gunjekar.rushi@gmail.com"
 # git push origin main
 
 # git subtree add --prefix=sub-folder https://github.com/rushig71/stunning-rotary-phone.git main --squash
-git subtree pull --prefix=sub-folder https://github.com/rushig71/stunning-rotary-phone.git main --squash
-git push
+env GIT_TERMINAL_PROMPT=1 git subtree pull --prefix=sub-folder https://github.com/rushig71/stunning-rotary-phone.git main --squash
+env GIT_TERMINAL_PROMPT=1 git push
